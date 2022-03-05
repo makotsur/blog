@@ -6,12 +6,12 @@
   
   <title>パブリッシャー ドメイン (発行元ドメイン) と発行者確認 | Japan Azure Identity Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="こんにちは、Azure &amp; Identity サポート チームの鶴巻です。今回はしばしばお問い合わせをいただく「パブリッシャー ドメイン (発行元ドメイン)」と「発行者確認」についてまとめます。 パブリッシャー ドメイン (発行元ドメイン) とはアプリケーションと Azure AD を連携し、ユーザーが初めてアプリケーションにアクセスすると Azure AD 認証時に以下のような画面が表示">
+  <meta name="description" content="こんにちは、Azure &amp; Identity サポート チームの鶴巻です。 今回はしばしばお問い合わせをいただく「パブリッシャー ドメイン (発行元ドメイン)」と「発行者確認」についてまとめます。 パブリッシャー ドメイン (発行元ドメイン) とはアプリケーションと Azure AD を連携し、ユーザーが初めてアプリケーションにアクセスすると Azure AD 認証時に以下のような画面が表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="パブリッシャー ドメイン (発行元ドメイン) と発行者確認">
 <meta property="og:url" content="https://jpazureid.github.io/blog/azure-active-directory/publisher-domain/index.html">
 <meta property="og:site_name" content="Japan Azure Identity Support Blog">
-<meta property="og:description" content="こんにちは、Azure &amp; Identity サポート チームの鶴巻です。今回はしばしばお問い合わせをいただく「パブリッシャー ドメイン (発行元ドメイン)」と「発行者確認」についてまとめます。 パブリッシャー ドメイン (発行元ドメイン) とはアプリケーションと Azure AD を連携し、ユーザーが初めてアプリケーションにアクセスすると Azure AD 認証時に以下のような画面が表示">
+<meta property="og:description" content="こんにちは、Azure &amp; Identity サポート チームの鶴巻です。 今回はしばしばお問い合わせをいただく「パブリッシャー ドメイン (発行元ドメイン)」と「発行者確認」についてまとめます。 パブリッシャー ドメイン (発行元ドメイン) とはアプリケーションと Azure AD を連携し、ユーザーが初めてアプリケーションにアクセスすると Azure AD 認証時に以下のような画面が表">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory/publisher-domain/permissions-requested.png">
 <meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory/publisher-domain/update-domain-1.png">
@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory/publisher-domain/publisher-verified.png">
 <meta property="og:image" content="https://jpazureid.github.io/blog/azure-active-directory/publisher-domain/custom-domain.png">
 <meta property="article:published_time" content="2022-03-06T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-05T11:48:29.549Z">
+<meta property="article:modified_time" content="2022-03-05T18:19:15.102Z">
 <meta property="article:author" content="Azure Identity Support Japan">
 <meta property="article:tag" content="Azure AD">
 <meta property="article:tag" content="Application">
@@ -109,71 +109,65 @@
         
         <a href="https://github.com/jpazureid/blog/issues/new?title=&body=%0A%0A---%0A%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.%0A%0A*+ID%3A+4c825909-de0f-5965-b95b-a250242d0c0f%0A*+%E5%AF%BE%E8%B1%A1%E8%A8%98%E4%BA%8B%3A+%5B%E3%83%91%E3%83%96%E3%83%AA%E3%83%83%E3%82%B7%E3%83%A3%E3%83%BC+%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3+%28%E7%99%BA%E8%A1%8C%E5%85%83%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%29+%E3%81%A8%E7%99%BA%E8%A1%8C%E8%80%85%E7%A2%BA%E8%AA%8D%5D%28https%3A%2F%2Fjpazureid.github.io%2Fblog%2Fazure-active-directory%2Fpublisher-domain%2F%29%0A*+Content+Source%3A+%5Barticles%2Fazure-active-directory%2Fpublisher-domain.md%5D%28https%3A%2F%2Fgithub.com%2Fjpazureid%2Fblog%2Fblob%2Fmain%2Farticles%2Fazure-active-directory%2Fpublisher-domain.md%29%0A*+Author%3A+" class="article-github-issue-link" target="_blank" rel="noopener noreferrer">feedback</a>
         
-        <a data-url="https://jpazureid.github.io/blog/azure-active-directory/publisher-domain/" data-id="cl0ds86xe007t0mqrcp6qcq48" class="article-share-link">共有</a>
+        <a data-url="https://jpazureid.github.io/blog/azure-active-directory/publisher-domain/" data-id="cl0e66p9j007t0mql44w0gmdb" class="article-share-link">共有</a>
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>こんにちは、Azure &amp; Identity サポート チームの鶴巻です。<br>今回はしばしばお問い合わせをいただく「パブリッシャー ドメイン (発行元ドメイン)」と「発行者確認」についてまとめます。</p>
-<h2 id="パブリッシャー-ドメイン-発行元ドメイン-とは"><a href="#パブリッシャー-ドメイン-発行元ドメイン-とは" class="headerlink" title="パブリッシャー ドメイン (発行元ドメイン) とは"></a>パブリッシャー ドメイン (発行元ドメイン) とは</h2><p>アプリケーションと Azure AD を連携し、ユーザーが初めてアプリケーションにアクセスすると Azure AD 認証時に以下のような画面が表示される場合があります。<br><img src="/blog/azure-active-directory/publisher-domain/permissions-requested.png"></p>
+        <p>こんにちは、Azure &amp; Identity サポート チームの鶴巻です。</p>
+<p>今回はしばしばお問い合わせをいただく「パブリッシャー ドメイン (発行元ドメイン)」と「発行者確認」についてまとめます。</p>
+<h2 id="パブリッシャー-ドメイン-発行元ドメイン-とは"><a href="#パブリッシャー-ドメイン-発行元ドメイン-とは" class="headerlink" title="パブリッシャー ドメイン (発行元ドメイン) とは"></a>パブリッシャー ドメイン (発行元ドメイン) とは</h2><p>アプリケーションと Azure AD を連携し、ユーザーが初めてアプリケーションにアクセスすると Azure AD 認証時に以下のような画面が表示される場合があります。</p>
+<p><img src="/blog/azure-active-directory/publisher-domain/permissions-requested.png"></p>
 <p>ここで表示されている “demo.〇〇〇.com” と表示されている部分がパブリッシャー ドメイン (発行元ドメイン) を表しています。 </p>
-<p>この情報は、ユーザーがサインインしようとしているアプリケーションがどのような組織によって開発されたものであるかを示す情報となります。ユーザーはこの情報を確認することで、信頼された組織が発行したアプリケーションかどうかを判断することが可能となります。</p>
+<p>この情報は、ユーザーがサインインしようとしているアプリケーションがどのような組織によって開発されたものであるかを示しています。ユーザーはこの情報を確認することで、信頼された組織が発行したアプリケーションかどうかを判断することが可能となります。弊社ではこのパブリッシャー ドメイン (発行元ドメイン) をどのように設定すればよいのかというお問い合わせをよくいただいていることから、以下でその詳細をおまとめいたします。</p>
 <p>弊社ドキュメントの <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/develop/publisher-verification-overview">発行者の確認</a> にも詳細が記載されています。お時間あるときにご一読ください。</p>
 <h2 id="パブリッシャー-ドメインの登録に必要なこと"><a href="#パブリッシャー-ドメインの登録に必要なこと" class="headerlink" title="パブリッシャー ドメインの登録に必要なこと"></a>パブリッシャー ドメインの登録に必要なこと</h2><p>パブリッシャー ドメインの登録には大きく分けると以下の二つのステップがあります。</p>
 <ol>
 <li>パブリッシャー ドメインを構成する</li>
 <li>発行者確認を行う</li>
 </ol>
-<p>このうち、”発行者確認” においてよく問題となるケースが生じます。<br>本資料では、これまでにお問い合わせいただいた実績を踏まえ、問題なく構成いただけた報告例をもとに発行者確認に必要な手順や情報を紹介します。</p>
-<h2 id="パブリッシャー-ドメインを構成する"><a href="#パブリッシャー-ドメインを構成する" class="headerlink" title="パブリッシャー ドメインを構成する"></a>パブリッシャー ドメインを構成する</h2><p>パブリッシャー ドメインの構成は発行者確認と比べ比較的容易です。<br>詳細は以下の資料に記載がございますが、抑えていただきたい点を後述します。 </p>
+<p>このうち、”発行者確認” においてよく問題となるケースが生じます。本資料では、これまでにお問い合わせいただいた実績を踏まえ、問題なく構成いただけた報告例をもとに発行者確認に必要な手順や情報を紹介します。</p>
+<h2 id="パブリッシャー-ドメインを構成する"><a href="#パブリッシャー-ドメインを構成する" class="headerlink" title="パブリッシャー ドメインを構成する"></a>パブリッシャー ドメインを構成する</h2><p>パブリッシャー ドメインの構成は発行者確認と比べ比較的容易です。詳細は以下の資料に記載がございますが、抑えていただきたい点を後述します。 </p>
 <p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/develop/howto-configure-publisher-domain">アプリケーションの発行元ドメインを構成する</a></p>
-<p>パブリッシャー ドメインは、以下のいずれかの方法で構成が可能です。<br>どちらかの方法でドメインの検証ができれば問題ありませんため、アプリケーションを登録する対象テナントの環境に合わせてご選択ください。 </p>
-<ol>
-<li>検証済みのドメインから選択する</li>
-</ol>
-<p>設定対象テナントのカスタム ドメインに、検証済みドメインとしてあらかじめ登録しておくことで、以下のように選択肢に表示されるようになります。<br><img src="/blog/azure-active-directory/publisher-domain/update-domain-1.png"></p>
+<p>パブリッシャー ドメインは、以下のいずれかの方法で構成が可能です。どちらかの方法でドメインの検証ができれば問題ありませんので、アプリケーションを登録する対象テナントの環境に合わせてご選択ください。 </p>
+<h3 id="方法-1-検証済みのドメインから選択する"><a href="#方法-1-検証済みのドメインから選択する" class="headerlink" title="方法 1. 検証済みのドメインから選択する"></a>方法 1. 検証済みのドメインから選択する</h3><p>設定対象テナントのカスタム ドメインに、検証済みドメインとしてあらかじめ登録しておくことで、以下のように選択肢に表示されるようになります。</p>
+<p><img src="/blog/azure-active-directory/publisher-domain/update-domain-1.png"></p>
 <p>カスタム ドメインの追加方法については <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/fundamentals/add-custom-domain">Azure Active Directory ポータルを使用してカスタム ドメイン名を追加する</a> をご参照ください。</p>
-<ol start="2">
-<li>JSON ファイルを用意する</li>
-</ol>
-<p>[新しいドメインの確認] を選択した際に表示される手順に従って構成します。<br><img src="/blog/azure-active-directory/publisher-domain/update-domain-2.png"></p>
-<p>まず、以下のような内容の JSON ファイルを事前に用意します。<br>{YOUR-APP-ID-HERE} は、パブリッシャー ドメインを構成しているアプリケーションのアプリケーション ID に置き換えます。 </p>
+<h3 id="方法-2-JSON-ファイルを用意する"><a href="#方法-2-JSON-ファイルを用意する" class="headerlink" title="方法 2. JSON ファイルを用意する"></a>方法 2. JSON ファイルを用意する</h3><p>[新しいドメインの確認] を選択した際に表示される手順に従って構成します。 </p>
+<p><img src="/blog/azure-active-directory/publisher-domain/update-domain-2.png"></p>
+<p>まず、以下のような内容の JSON ファイルを事前に用意します。{YOUR-APP-ID-HERE} は、パブリッシャー ドメインを構成しているアプリケーションのアプリケーション ID に置き換えます。 </p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">&quot;associatedApplications&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;applicationId&quot;</span>: <span class="string">&quot;&#123;YOUR-APP-ID-HERE&#125;&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 <div class="alert is-info"><p class="alert-title">Note</p><p>パブリッシャー ドメインを構成するアプリケーションが複数ある場合は、{ “applicationId”: “{YOUR-APP-ID-HERE}” } のブロックを必要な数分 “,” で区切って定義します。 </p></div>
-<p>次に、作成した JSON ファイルを、以下のようなパスでアクセスできるよう Web サーバー上に配置します。<br>{YOUR-DOMAIN-HERE} は、[パブリッシャー ドメイン] 欄に入力したドメインに置き換えます。 </p>
+<p>次に、作成した JSON ファイルを、以下のようなパスでアクセスできるよう Web サーバー上に配置します。{YOUR-DOMAIN-HERE} は、[パブリッシャー ドメイン] 欄に入力したドメインに置き換えます。 </p>
 <blockquote>
 <p>https://{YOUR-DOMAIN-HERE}.com/.well-known/microsoft-identity-association.json</p>
 </blockquote>
-<h2 id="発行者確認を行う"><a href="#発行者確認を行う" class="headerlink" title="発行者確認を行う"></a>発行者確認を行う</h2><p>発行者確認を行うには、[MPN ID を追加して発行元を確認します] をクリックして表示される画面にも表示されているとおり、事前に満たしておくべき条件がいくつかあります。<br><img src="/blog/azure-active-directory/publisher-domain/publisher-verified.png"></p>
+<h2 id="発行者確認を行う"><a href="#発行者確認を行う" class="headerlink" title="発行者確認を行う"></a>発行者確認を行う</h2><p>発行者確認を行うには、[MPN ID を追加して発行元を確認します] をクリックして表示される画面にも表示されているとおり、事前に満たしておくべき条件がいくつかあります。以下にその条件をまとめます。</p>
+<p><img src="/blog/azure-active-directory/publisher-domain/publisher-verified.png"></p>
 <ol>
-<li><p>大前提となる条件は <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/partner-center/mpn-create-a-partner-center-account">Microsoft Partner Network プログラム</a> に登録し、審査が完了していることです </p>
-</li>
-<li><p>パートナー グローバル アドレス (PGA) の連絡先メール アドレスのドメインが、アプリケーションを登録するテナントに、検証済みカスタム ドメインとして登録されている必要があります<br><img src="/blog/azure-active-directory/publisher-domain/custom-domain.png"></p>
-</li>
+<li>大前提として <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/partner-center/mpn-create-a-partner-center-account">Microsoft Partner Network プログラム</a> に登録し審査が完了している。</li>
+<li>パートナー グローバル アドレス (PGA) の連絡先メール アドレスのドメインが、アプリケーションを登録するテナントに、検証済みカスタム ドメインとして登録されている。</li>
 </ol>
-<div class="alert is-info"><p class="alert-title">Note</p><p>たとえば、<a href="mailto:&#x61;&#x64;&#109;&#x69;&#x6e;&#64;&#99;&#111;&#110;&#116;&#111;&#115;&#111;&#46;&#x63;&#111;&#109;">&#x61;&#x64;&#109;&#x69;&#x6e;&#64;&#99;&#111;&#110;&#116;&#111;&#115;&#111;&#46;&#x63;&#111;&#109;</a> というメール アドレスが PGA の連絡先メール アドレスである場合、”contoso.com” ドメインが、アプリケーションを登録するテナントの検証済みカスタム ドメインに登録されている必要があります</p></div>
-<div class="alert is-info"><p class="alert-title">Note</p><p>検証済みカスタム ドメインはサブドメインも許容されます。</p><p>たとえば、<a href="mailto:&#x61;&#x64;&#x6d;&#105;&#110;&#x40;&#115;&#x75;&#98;&#46;&#x63;&#111;&#x6e;&#116;&#x6f;&#115;&#111;&#46;&#x63;&#111;&#x6d;">&#x61;&#x64;&#x6d;&#105;&#110;&#x40;&#115;&#x75;&#98;&#46;&#x63;&#111;&#x6e;&#116;&#x6f;&#115;&#111;&#46;&#x63;&#111;&#x6d;</a> というメール アドレスが PGA の連絡先メール アドレスである場合、”contoso.com” ドメインが、アプリケーションを登録するテナントの検証済みカスタム ドメインに登録されていれば問題ありません。”sub.contoso.com” を検証済みカスタム ドメインとして構成いただく必要はありません。</p></div>
+<p><img src="/blog/azure-active-directory/publisher-domain/custom-domain.png"></p>
+<div class="alert is-info"><p class="alert-title">Note</p><p>たとえば、<a href="mailto:&#x61;&#x64;&#x6d;&#x69;&#110;&#64;&#x63;&#111;&#110;&#x74;&#x6f;&#x73;&#x6f;&#x2e;&#x63;&#111;&#109;">&#x61;&#x64;&#x6d;&#x69;&#110;&#64;&#x63;&#111;&#110;&#x74;&#x6f;&#x73;&#x6f;&#x2e;&#x63;&#111;&#109;</a> というメール アドレスが PGA の連絡先メール アドレスである場合、”contoso.com” ドメインが、アプリケーションを登録するテナントの検証済みカスタム ドメインに登録されている必要があります</p></div>
+<div class="alert is-info"><p class="alert-title">Note</p><p>検証済みカスタム ドメインはサブドメインも許容されます。たとえば、<a href="mailto:&#97;&#100;&#109;&#x69;&#x6e;&#64;&#x73;&#x75;&#x62;&#x2e;&#99;&#111;&#110;&#116;&#111;&#x73;&#x6f;&#46;&#99;&#x6f;&#109;">&#97;&#100;&#109;&#x69;&#x6e;&#64;&#x73;&#x75;&#x62;&#x2e;&#99;&#111;&#110;&#116;&#111;&#x73;&#x6f;&#46;&#99;&#x6f;&#109;</a> というメール アドレスが PGA の連絡先メール アドレスである場合、”contoso.com” ドメインが、アプリケーションを登録するテナントの検証済みカスタム ドメインに登録されていれば問題ありません。”sub.contoso.com” を検証済みカスタム ドメインとして構成いただく必要はありません。</p></div>
 <ol start="3">
-<li>アプリケーションが登録されている対象テナントが Microsoft Partner Network テナント管理の一覧に含まれている必要があります</li>
+<li>アプリケーションが登録されている対象テナントが Microsoft Partner Network テナント管理の一覧に含まれている</li>
 </ol>
-<p>発行者確認を行う前に、上記を満たしているかどうか事前にご確認をお願いします。<br>実際に発行者確認を行う場合には、さらに以下の条件をすべて満たす必要があります。</p>
+<p>発行者確認を行う前に、上記を満たしているかどうか事前にご確認をお願いします。実際に発行者確認を行う場合には、さらに以下の条件をすべて満たす必要があります。</p>
 <ol>
-<li><p>検証を実施するアカウントが Azure ポータルへ多要素認証を利用してサインインしている必要があります</p>
-</li>
-<li><p>検証を実施するアカウントに以下の権限が割り当てられている必要があります</p>
-<ol>
-<li><p>Azure AD で、アプリケーション管理者、クラウド アプリケーション管理者、グローバル管理者のいずれかの Azure AD ロールが割り当てられていること </p>
-</li>
-<li><p>パートナー センターで、MPN 管理者、アカウント管理者のいずれかのロールが割り当てられていること (Azure AD でグローバル管理者が割り当て手られている場合は不要) </p>
-</li>
+<li>検証を実施するアカウントが Azure ポータルへ多要素認証を利用してサインインしている</li>
+<li>検証を実施するアカウントに以下の権限が割り当てられている<ol>
+<li>Azure AD で、アプリケーション管理者、クラウド アプリケーション管理者、グローバル管理者のいずれかの Azure AD ロールが割り当てられている</li>
+<li>パートナー センターで、MPN 管理者、アカウント管理者のいずれかのロールが割り当てられている (Azure AD でグローバル管理者が割り当てられている場合は不要)</li>
 </ol>
 </li>
 </ol>
 <p>上記の内容の詳細は <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/develop/mark-app-as-publisher-verified">アプリを発行者確認済みとしてマークする</a> に記載があります。こちらもご一読ください。</p>
 <h2 id="よくある質問"><a href="#よくある質問" class="headerlink" title="よくある質問"></a>よくある質問</h2><p>以下の点と併せて <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/develop/troubleshoot-publisher-verification">発行者の確認に関するトラブルシューティング</a> もご覧ください。 </p>
-<h3 id="ゲスト-ユーザーで作業を実施できますか"><a href="#ゲスト-ユーザーで作業を実施できますか" class="headerlink" title="ゲスト ユーザーで作業を実施できますか"></a>ゲスト ユーザーで作業を実施できますか</h3><p>これまでにゲスト ユーザーで実施できた実績がありません。<br>上記にて「アプリケーションが登録されている対象テナントが Microsoft Partner Network テナント管理の一覧に含まれている必要があります」と説明していますが、サインインに使用しているユーザー アカウントのテナントも同様に含まれている必要があります。<br>ゲスト ユーザーのテナントが管理外のテナントである場合やマイクロソフト アカウントである場合、一覧に追加することができないことが想定されますため、アプリケーションを登録する組織内のユーザーで実施いただくことをおすすめいたします。 </p>
-<p>いかがでしたでしょうか。<br>もしうまく登録／構成ができない場合には、上記の確認ポイントをすべてクリアできているかどうかご確認いただければうれしいです。</p>
+<h3 id="ゲスト-ユーザーで作業を実施できますか"><a href="#ゲスト-ユーザーで作業を実施できますか" class="headerlink" title="ゲスト ユーザーで作業を実施できますか"></a>ゲスト ユーザーで作業を実施できますか</h3><p>これまでにゲスト ユーザーで実施できた実績がありません。上記のとおり「アプリケーションが登録されている対象テナントが Microsoft Partner Network テナント管理の一覧に含まれている必要があります」と説明していますが、サインインに使用しているユーザー アカウントのテナントも同様に含まれている必要があります。ゲスト ユーザーのテナントが管理外のテナントである場合やマイクロソフト アカウントである場合、一覧に追加することができないことが想定されますため、アプリケーションを登録する組織内のユーザーで実施いただくことをおすすめいたします。 </p>
+<p>もしうまく登録／構成ができない場合には、上記の確認ポイントをすべてクリアできているかどうかご確認いただき、そのうえで弊社サポートまでお問い合わせいただければうれしいです。</p>
 <p>では、また今度！</p>
 
       
